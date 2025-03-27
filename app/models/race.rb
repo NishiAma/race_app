@@ -11,6 +11,8 @@ class Race < ApplicationRecord
   has_many :race_students
   has_many :students, through: :race_students
 
+  accepts_nested_attributes_for :race_students
+
   enum :status, { ready: 0, completed: 1 }
 
   validates :status, presence: true

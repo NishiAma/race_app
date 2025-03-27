@@ -46,25 +46,19 @@ RSpec.describe Api::V1::RacesController, type: :controller do
       }
     end
 
-    # context 'with valid parameters' do
-    #   it 'creates a new race' do
-    #     expect {
-    #       post :create, params: valid_attributes
-    #     }.to change(Race, :count).by(1)
-    #   end
+    context 'with valid parameters' do
+      it 'creates a new race' do
+        expect {
+          post :create, params: valid_attributes
+        }.to change(Race, :count).by(1)
+      end
 
-    #   it 'creates associated race_students' do
-    #     expect {
-    #       post :create, params: valid_attributes
-    #     }.to change(RaceStudent, :count).by(3)
-    #   end
-
-    #   it 'returns the created race' do
-    #     post :create, params: valid_attributes
-    #     expect(response).to have_http_status(:created)
-    #     expect(JSON.parse(response.body)['name']).to eq('New Race')
-    #   end
-    # end
+      it 'returns the created race' do
+        post :create, params: valid_attributes
+        expect(response).to have_http_status(:created)
+        expect(JSON.parse(response.body)['name']).to eq('New Race')
+      end
+    end
 
     context 'with invalid parameters' do
       let(:invalid_attributes) do
