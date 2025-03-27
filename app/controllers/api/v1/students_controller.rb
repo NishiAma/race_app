@@ -1,6 +1,6 @@
 module Api
   module V1
-    class StudentsController < ApplicationController
+    class StudentsController < BaseController
       before_action :set_student, only: [:show, :update, :destroy]
 
       def index

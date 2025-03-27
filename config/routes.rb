@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :students
-      resources :races, only: [:index, :create, :update]
+      resources :races, only: [:index, :show, :create, :update]
     end
   end
 end

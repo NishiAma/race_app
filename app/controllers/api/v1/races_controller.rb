@@ -1,6 +1,6 @@
 module Api
   module V1
-    class RacesController < ApplicationController
+    class RacesController < BaseController
       def index
         races = Race.order(updated_at: :desc)
         render json: races
